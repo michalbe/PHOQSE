@@ -3,6 +3,9 @@
 ![enigma.jpg](enigma.jpg)
 
 
+## Rotors' wirings
+![rotors.png](rotors.png)
+
 ## Links
  - [How it works?](https://www.youtube.com/watch?v=uMPw0ObNJbQ)
  - [Enigma Code by NSA](https://www.youtube.com/watch?v=ncL2Fl6prH8)
