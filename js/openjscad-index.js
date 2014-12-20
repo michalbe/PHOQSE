@@ -42,5 +42,17 @@ window.onload = function() {
   });
 
   gProcessor = new OpenJsCad.Processor($('#viewer')[0]);
-  exec(editor);
+
+  if (document.location.search) {
+    var modelUrl = document.location.search.split('=').pop();
+    $.ajax({
+      url: 'models/' + modelUrl
+    }).done(function(data) {
+      editor.setValue(data);
+      exec(editor);
+    });
+  } else {
+    // rund efault project
+    exec(editor);
+  }
 };
