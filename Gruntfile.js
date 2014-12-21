@@ -9,7 +9,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     browserSync: {
       bsFiles: {
-        src : 'models/**/*.jscad'
+        src : ['models/**/*.jscad', 'js/custom-openjscad-shapes.js']
       },
       options: {
         startPath: model,
