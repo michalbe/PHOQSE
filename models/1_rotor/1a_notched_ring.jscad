@@ -4,10 +4,12 @@
 var objectHeight = 0.5;
 function main() {
   var mainRing = ring(bigRingSize, 2, objectHeight);
-  mainRing = hole(mainRing, screwHoleSize, [9, 0, 0]);
-  mainRing = hole(mainRing, screwHoleSize, [-9, 0, 0]);
-  mainRing = hole(mainRing, screwHoleSize, [0, 9, 0]);
-  mainRing = hole(mainRing, screwHoleSize, [0, -9, 0]);
+  mainRing = circularHoles({
+    base: mainRing,
+    numberOfHoles: 4,
+    holeRadius: screwHoleSize,
+    distanceFromCenter: bigRingScrewRadius
+  });
 
   var notch = cube({
     size: [10, 10, 1],
