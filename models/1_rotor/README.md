@@ -12,4 +12,4 @@ Exploded view of an Enigma machine rotor. Labeled components are as follows:
  8. Hub, through which fits the central axle
  9. Finger wheel, used to manually set the orientation of the rotor
  10. Ratchet mechanism
- 11. Back face (similar to element 2, with different holes for screws)
+ 11. Back face (unlisted on the diagram, similar to element 2, with different holes for screws)
