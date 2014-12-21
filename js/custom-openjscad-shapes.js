@@ -5,6 +5,10 @@ var customShapesDefinitions = function() {
   * Globals
   *
   */
+
+  // size of the 1 & 3 parts (notched & alphabet rings)
+  var bigRingSize = 10;
+
   // size of the hole for the screw
   var screwHoleSize = 0.7;
 
