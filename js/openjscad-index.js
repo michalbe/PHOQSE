@@ -26,7 +26,7 @@ window.onload = function() {
     } else {
       editor.getSession().setMode('ace/mode/javascript');
     }
-    gProcessor.setJsCad(src);
+    gProcessor.setJsCad(customShapes + src);
   };
 
   editor = ace.edit('editor');
