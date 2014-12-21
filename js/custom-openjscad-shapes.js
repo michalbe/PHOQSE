@@ -57,7 +57,12 @@ var customShapesDefinitions = function() {
     return hole(circle, radius-width, [0, 0, 0]);
   };
 
-  var circularHoles = function(base, numberOfHoles, holeRadius, distanceFromCenter) {
+  var circularHoles = function(options) {
+    var base = options.base;
+    var numberOfHoles = options.numberOfHoles;
+    var holeRadius = options.holeRadius;
+    var distanceFromCenter = options.distanceFromCenter;
+    console.log(options);
     var angle = 0;
     var step = (2*Math.PI) / numberOfHoles;
     for(var i = 0; i < numberOfHoles; i++) {
