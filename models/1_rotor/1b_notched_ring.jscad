@@ -3,7 +3,7 @@
 
 var objectHeight = 0.5;
 function main() {
-  var mainRing = ring(10, 2, 0.5);
+  var mainRing = ring(bigRingSize, 2, objectHeight);
   mainRing = hole(mainRing, screwHoleSize, [9, 0, 0]);
   mainRing = hole(mainRing, screwHoleSize, [-9, 0, 0]);
   mainRing = hole(mainRing, screwHoleSize, [0, 9, 0]);
