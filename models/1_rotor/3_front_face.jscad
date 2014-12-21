@@ -19,6 +19,13 @@ function main() {
     holeRadius: pinHoleSize,
     distanceFromCenter: pinRadius
   });
-  var wholePart = mainRing;
+
+  var depth = cylinder({
+    r:  alphabetHoleSize * 0.6,
+    h:  1,
+    center: true
+  }).translate([0, 0, objectHeight * 0.7]);
+
+  var wholePart = difference(mainRing, depth);
   return wholePart;
 }
