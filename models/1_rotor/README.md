@@ -1,4 +1,4 @@
-## Enigma rotors
+## Rotors
 
 ![rotors](../../imgs/rotors-model.png)
 Exploded view of an Enigma machine rotor. Labeled components are as follows:
