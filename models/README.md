@@ -1,0 +1,4 @@
+## Enigma rotors
+
+![rotors](http://upload.wikimedia.org/wikipedia/commons/f/f3/Enigma_rotor_exploded_view.png)
+Exploded view of an Enigma machine rotor. Labeled components are as follows: Notched ring, used to "carry" the rotation of one rotor to another via a ratchet mechanism Dot marking the position of the "A" contact, for use by the operator in assembling the rotor Alphabet "tyre" or ring; some rings had a sequence of numerals instead of letters Electrical plate contacts Wire connections joining the plate contacts to the pin contacts Spring-loaded pin contacts Spring-loaded ring adjusting lever, used to alter the position of the alphabet ring; a pin on the lever fits into holes in the side of the alphabet ring Hub, through which fits the central axle Finger wheel, used to manually set the orientation of the rotor Ratchet mechanism
