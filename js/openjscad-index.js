@@ -48,8 +48,9 @@ window.onload = function() {
     $.ajax({
       url: 'models/' + modelUrl
     }).done(function(data) {
-      editor.setValue(data);
+      editor.setValue(data, 1);
       exec(editor);
+      editor.blur();
     });
   } else {
     // rund efault project
