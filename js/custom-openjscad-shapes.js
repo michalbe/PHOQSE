@@ -36,7 +36,7 @@ var customShapesDefinitions = function() {
   var hole = function(base, size, translate){
     return difference(base, cylinder({
       r: size,
-      h: objectHeight || size,
+      h: objectHeight,
       center: true
     }).translate(translate));
   };
