@@ -1,7 +1,10 @@
-var customShapesDefinitions = function(){
+var customShapesDefinitions = function() {
+  var screwHoleSize = 0.7;
+  var pinHoleSize = 0.5;
   var hole = function(base, size, translate){
-    return difference(base, sphere({
+    return difference(base, cylinder({
       r: size,
+      h: objectHeight || size,
       center: true
     }).translate(translate));
   };
@@ -9,6 +12,7 @@ var customShapesDefinitions = function(){
   var ring = function(radius, width, height){
     var part1 = cylinder({
       r: radius,
+      h: height,
       center: true
     });
 
@@ -19,6 +23,19 @@ var customShapesDefinitions = function(){
 
     var circle = intersection(part2, part1);
     return hole(circle, radius-width, [0, 0, 0]);
+  };
+
+  var circularHoles = function(base, numberOfHoles, holeRadius, distanceFromCenter) {
+    var angle = 0;
+    var step = (2*Math.PI) / numberOfHoles;
+    for(var i = 0; i < numberOfHoles; i++) {
+      var x = distanceFromCenter * Math.cos(angle);
+      var y = distanceFromCenter * Math.sin(angle);
+      base = hole(base, holeRadius, [x, y, 0]);
+      angle += step;
+    }
+
+    return base;
   };
 };
 
