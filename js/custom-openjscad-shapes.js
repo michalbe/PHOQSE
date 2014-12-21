@@ -24,7 +24,7 @@ var customShapesDefinitions = function(){
 
 // We don't want those custom shapes defined above to be accesible in the
 // global scope, we also don't want to edit them as a plain text or string
-// (I kind of live syntax highlighting) so let's just strip the content of
+// (I kind of love syntax highlighting) so let's just strip the content of
 // the function and pass it as a string to the OpenJSCad processor
 var customShapes = customShapesDefinitions.toString().split('\n');
 customShapes.pop();
