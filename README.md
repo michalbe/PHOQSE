@@ -20,3 +20,4 @@
  - files to copy: `csg.js`, `openscad.js`, `openjscad.js`, `imgs/busy.gif`
  - to run a watcher: `grunt --model="part_name/model_name.jscad"`
  - set proper syntax highlighter in Atom: `shift`+`ctrl`+`l`
+  - or do [this](https://discuss.atom.io/t/remember-syntax-highlighting/3229)
