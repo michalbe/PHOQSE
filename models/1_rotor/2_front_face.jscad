@@ -1,4 +1,4 @@
-// title: PHOQSE / 1. Rotor / 3. Front Face
+// title: PHOQSE / 1. Rotor / 2. Front Face
 // author: Michal Budzynski <michal@virtualdesign.pl>
 
 //

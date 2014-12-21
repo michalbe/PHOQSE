@@ -1,4 +1,4 @@
-// title: PHOQSE / 1. Rotor / 1. Notched Ring
+// title: PHOQSE / 1. Rotor / 1A. Notched Ring
 // author: Michal Budzynski <michal@virtualdesign.pl>
 
 function main() {
