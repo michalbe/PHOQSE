@@ -27,6 +27,9 @@ var customShapesDefinitions = function() {
   var hubRadius = 0.75;
   var hubDiameter = hubRadius * 2;
 
+  // radius for positioning screws in elements 1AB & 3
+  var bigRingScrewRadius = 9;
+
   // radius for positioning screws in elements 2 & 10
   var fontScrewRadius = 3;
 
@@ -66,7 +69,6 @@ var customShapesDefinitions = function() {
     var numberOfHoles = options.numberOfHoles;
     var holeRadius = options.holeRadius;
     var distanceFromCenter = options.distanceFromCenter;
-    console.log(options);
     var angle = 0;
     var step = (2*Math.PI) / numberOfHoles;
     for(var i = 0; i < numberOfHoles; i++) {
