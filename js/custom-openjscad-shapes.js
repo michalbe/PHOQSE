@@ -27,7 +27,7 @@ var customShapesDefinitions = function() {
   var fontScrewRadius = 3;
 
   // radius for positioning pins in elements 2 & 10 (and 11)
-  var pinRadius = 6;
+  var pinRadius = 5.5;
  /**
   *
   * Shapes
