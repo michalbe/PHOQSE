@@ -1,4 +1,4 @@
-# `ENIGMA` by [@michalbe](http://github.com/michalbe)
+# `PHOQSE` by [@michalbe](http://github.com/michalbe)
 
 ![enigma.jpg](enigma.jpg)
 
