@@ -1,9 +1,9 @@
 # `PHOQSE` by [@michalbe](http://github.com/michalbe)
 
-![enigma.jpg](enigma.jpg)
+![enigma.jpg](imgs/enigma.jpg)
 
 ## Rotors' wirings
-![rotors.png](rotors.png)
+![rotors.png](imgs/rotors.png)
 
 ## Links
  - [How it works?](https://www.youtube.com/watch?v=uMPw0ObNJbQ)
