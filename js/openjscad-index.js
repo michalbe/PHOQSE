@@ -26,7 +26,7 @@ window.onload = function() {
     } else {
       editor.getSession().setMode('ace/mode/javascript');
     }
-    gProcessor.setJsCad(src);
+    gProcessor.setJsCad(customShapes + src);
   };
 
   editor = ace.edit('editor');
@@ -48,11 +48,31 @@ window.onload = function() {
     $.ajax({
       url: 'models/' + modelUrl
     }).done(function(data) {
-      editor.setValue(data);
+      editor.setValue(data, 1);
       exec(editor);
+      editor.blur();
     });
+    var cameraSettings = window.sessionStorage.getItem('camera');
+    if (cameraSettings) {
+      cameraSettings = JSON.parse(cameraSettings);
+      for (var attr in cameraSettings) {
+        gProcessor.viewer[attr] = cameraSettings[attr];
+      }
+      gProcessor.viewer.onDraw();
+    }
   } else {
     // rund efault project
     exec(editor);
   }
 };
+
+document.body.addEventListener('mouseup', function(e) {
+  window.sessionStorage.setItem('camera', JSON.stringify({
+    angleX: gProcessor.viewer.angleX,
+    angleY: gProcessor.viewer.angleY,
+    angleZ: gProcessor.viewer.angleZ,
+    viewpointX: gProcessor.viewer.viewpointX,
+    viewpointY: gProcessor.viewer.viewpointY,
+    viewpointZ: gProcessor.viewer.viewpointZ
+  }));
+});

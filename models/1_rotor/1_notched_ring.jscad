@@ -1,28 +1,18 @@
-// title: Example 001
-// author: OpenSCAD.org
-// description: example001.scad ported to OpenJSCAD.org
-
-function r_from_dia(d) { return d / 2; }
-
-function rotcy(rot, r, h) {
-  return rotate(45, rot,
-    cylinder({r: r, h: h, center: true}));
-}
-
-function example001() {
-  var size = 50;
-  var hole = 25;
-  var cy_r = r_from_dia(hole);
-  var cy_h = r_from_dia(size * 2.5);
-
-  return difference(
-    sphere({r: r_from_dia(size)}),
-    rotcy([0, 0, 0], cy_r, cy_h),
-    rotcy([1, 0, 0], cy_r, cy_h),
-    rotcy([0, 1, 0], cy_r, cy_h)
-  );
-}
+// title: PHOQSE / 1. Rotor / 1. Notched Ring
+// author: Michal Budzynski <michal@virtualdesign.pl>
 
 function main() {
-  return example001();
+  var holeSize = 0.7;
+  var mainRing = ring(10, 2, 0.5);
+  mainRing = hole(mainRing, holeSize, [9, 0, 0]);
+  mainRing = hole(mainRing, holeSize, [-9, 0, 0]);
+  mainRing = hole(mainRing, holeSize, [0, 9, 0]);
+  mainRing = hole(mainRing, holeSize, [0, -9, 0]);
+
+  var notch = cube({
+    size: [10, 10, 1],
+    center: true
+  }).rotateZ(20).translate([10, 12, 0]);
+  var wholePart = difference(mainRing, notch);
+  return wholePart;
 }
