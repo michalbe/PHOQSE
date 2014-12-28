@@ -2,7 +2,6 @@
 
 ![enigma.jpg](enigma.jpg)
 
-
 ## Rotors' wirings
 ![rotors.png](rotors.png)
 
@@ -15,3 +14,8 @@
  - [HOWTO make a papercraft Enigma machine?](http://boingboing.net/2012/06/01/howto-make-a-papercraft-enigma.html)
  - [pl] [Zasada działania](http://edu.i-lo.tarnow.pl/inf/hist/006_col/0001.php)
  - [pl] [Składniki maszyny](http://edu.i-lo.tarnow.pl/inf/hist/006_col/0002.php)
+
+## Dev notes
+
+ - files to copy: `csg.js`, `openscad.js`, `openjscad.js`, `imgs/busy.gif`
+ - to run a watcher: `grunt --model="part_name/model_name.jscad"`
