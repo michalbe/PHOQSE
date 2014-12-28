@@ -18,7 +18,7 @@ var customShapesDefinitions = function() {
   // alphabet wheel's hole size
   var alphabetHoleSize = 7;
 
-  // cylinder ring's wall thickness
+  // cylinder ring's (7) wall thickness
   // front face ring needs to fit inside, and both need to fit
   // in the alphabet wheel (element 3)
   var cylinderThickness = 0.5;
