@@ -12,6 +12,7 @@
  - [Plans](http://www.fcet.staffs.ac.uk/jdw1/sucfm/bletchleypark.htm)
  - [The Enigma Machine](http://www.math.ucsd.edu/~crypto/students/enigma.html)
  - [HOWTO make a papercraft Enigma machine?](http://boingboing.net/2012/06/01/howto-make-a-papercraft-enigma.html)
+ - [Modeling Assignment: Enigma Machine](http://www.dgp.toronto.edu/~lockwood/enigma/enigma.htm)
  - [pl] [Zasada działania](http://edu.i-lo.tarnow.pl/inf/hist/006_col/0001.php)
  - [pl] [Składniki maszyny](http://edu.i-lo.tarnow.pl/inf/hist/006_col/0002.php)
 
