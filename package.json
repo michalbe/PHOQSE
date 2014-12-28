@@ -9,7 +9,6 @@
     "precommit-hook": "^1.0.7"
   },
   "scripts": {
-    "test": "node tests/PHOQSE-tests.js",
     "lint": "node node_modules/jshint/bin/jshint ."
   }
 }

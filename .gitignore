@@ -28,3 +28,10 @@ node_modules
 .lock-wscript
 
 .DS_Store
+
+# OpenJSCAD.org files
+OpenJSCAD.org
+csg.js
+openjscad.js
+openscad.js
+imgs
