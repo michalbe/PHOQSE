@@ -2,7 +2,7 @@
 
 ![rotors](../../imgs/rotors-model.png)
 Exploded view of an Enigma machine rotor. Labeled components are as follows:
- 1. [done](stl/1_notched_ring.stl) Notched ring, used to "carry" the rotation of one rotor to another via a ratchet mechanism
+ 1. Notched ring [:one:](stl/1_notched_ring.stl)
  2. Dot marking the position of the "A" contact, for use by the operator in assembling the rotor
  3. Alphabet "tyre" or ring; some rings had a sequence of numerals instead of letters
  4. Electrical plate contacts
