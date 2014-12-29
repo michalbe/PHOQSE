@@ -1,6 +1,7 @@
 // title: PHOQSE / 1. Rotor / 1A. Notched Ring
 // author: Michal Budzynski <michal@virtualdesign.pl>
 
+var objectHeight = 0.5;
 function main() {
   var mainRing = ring(10, 2, 0.5);
   mainRing = hole(mainRing, screwHoleSize, [9, 0, 0]);
