@@ -10,7 +10,7 @@ var addLetter = function(letter){
   l.forEach(function(pl) {
     o.push(rectangular_extrude(pl, {w: 4, h: 4}));
   });
-  return union(o).scale(0.08).rotateY(90);//.center(true);//;
+  return union(o).scale(0.08).rotateY(90);
 };
 
 var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -28,7 +28,7 @@ var generateLetters = function() {
     angle += step;
   }
 
-  return output; //union(output);
+  return output;
 };
 
 function main() {
