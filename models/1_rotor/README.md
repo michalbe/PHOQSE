@@ -14,7 +14,7 @@ Exploded view of an Enigma machine rotor. Labeled components are as follows:
  10. Ratchet mechanism
  11. Back face (unlisted on the diagram, similar to element 2, with different holes for screws)
 
- ![rotors](../../imgs/rotor-2.png)
- ![rotors](../../imgs/rotor-1.png)
- ![rotors](../../imgs/rotor-3.png)
- ![rotors](../../imgs/rotor-4.png)
+ ![rotors](../../imgs/rotor-2.jpg)
+ ![rotors](../../imgs/rotor-1.jpg)
+ ![rotors](../../imgs/rotor-3.jpg)
+ ![rotors](../../imgs/rotor-4.jpg)
