@@ -6,7 +6,8 @@
 var objectHeight = 6;
 function main() {
   var mainRing = ring(alphabetHoleSize, cylinderThickness, objectHeight);
+  var frontFace = include('2_front_face');
 
-  var wholePart = mainRing;
+  var wholePart = union(mainRing, frontFace);
   return wholePart;
 }

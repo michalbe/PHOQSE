@@ -11,7 +11,12 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
 }
 
 var includeFile = function(fileUrl) {
-  
+  $.ajax({
+    url: fileUrl,
+    cache: false
+  }).done(function(html) {
+    console.log('html', html);
+  });
 };
 
 window.onload = function() {
