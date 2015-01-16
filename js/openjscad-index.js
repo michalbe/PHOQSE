@@ -10,6 +10,10 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
   browser = RegExp.$1.toLowerCase();
 }
 
+var includeFile = function(fileUrl) {
+  
+};
+
 window.onload = function() {
   $('#viewer').height($(window).height());
 
