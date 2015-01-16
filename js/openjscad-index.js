@@ -10,7 +10,7 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
   browser = RegExp.$1.toLowerCase();
 }
 
-var includeFile = function(fileUrl) {
+var includeModel = function(fileUrl) {
   $.ajax({
     url: fileUrl,
     cache: false

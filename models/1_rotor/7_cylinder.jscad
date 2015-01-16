@@ -6,7 +6,7 @@
 var objectHeight = 6;
 function main() {
   var mainRing = ring(alphabetHoleSize, cylinderThickness, objectHeight);
-  var frontFace = include('/models/1_rotor/3_alphabet_ring.jscad');
+  var frontFace = includeModel('/models/1_rotor/3_alphabet_ring.jscad');
 
   var wholePart = union(mainRing, frontFace);
   return wholePart;
