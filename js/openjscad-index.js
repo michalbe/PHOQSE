@@ -10,6 +10,15 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
   browser = RegExp.$1.toLowerCase();
 }
 
+var includeModel = function(fileUrl) {
+  $.ajax({
+    url: fileUrl,
+    cache: false
+  }).done(function(html) {
+    console.log('html', html);
+  });
+};
+
 window.onload = function() {
   $('#viewer').height($(window).height());
 
