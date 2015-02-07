@@ -10,7 +10,7 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
   browser = RegExp.$1.toLowerCase();
 }
 
-var includeModel = function(fileUrl) {
+var requireModel = function(fileUrl, cb) {
   $.ajax({
     url: fileUrl,
     cache: false
@@ -24,9 +24,6 @@ var findRequires = function(source) {
   var requires = source.filter(function(line){
     return line.match(/require/);
   });
-
-  console.log('r', requires);
-
   return requires;
 };
 
@@ -41,6 +38,10 @@ window.onload = function() {
   var exec = function(editor) {
     var src = editor.getValue();
     var requires = findRequires(src);
+
+    if (requires) {
+      requireModel(requires[0].match(/require\(['"+](.*)['"+]\)/)[1]);
+    }
 
     if (src.match(/^\/\/\!OpenSCAD/i)) {
       editor.getSession().setMode('ace/mode/scad');
