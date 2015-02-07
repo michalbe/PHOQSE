@@ -28,6 +28,16 @@ var findRequires = function(source) {
   return requires;
 };
 
+var insertRequiredModel = function(model, source) {
+  var loadedModel = requireModel(model.match(/require\(['"+](.*)['"+]\)/)[1]);
+  source = source.toString().split('\n');
+
+  var lineIndex = source.indexOf(model)
+  source[lineIndex] = source[lineIndex].match(/(.*)=/)[0] + loadedModel;
+
+  return source.join('\n');
+}
+
 window.onload = function() {
   $('#viewer').height($(window).height());
 
@@ -41,7 +51,7 @@ window.onload = function() {
     var requires = findRequires(src);
 
     if (requires) {
-      requireModel(requires[0].match(/require\(['"+](.*)['"+]\)/)[1]);
+      src = insertRequiredModel(requires[0], src);
     }
 
     if (src.match(/^\/\/\!OpenSCAD/i)) {
