@@ -11,12 +11,15 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
 }
 
 var requireModel = function(fileUrl, cb) {
-  $.ajax({
+  var requiredModel = $.ajax({
     url: fileUrl,
-    cache: false
-  }).done(function(html) {
-    console.log('html', html);
-  });
+    cache: false,
+    async: false
+  }).responseText;
+
+  requiredModel = 'function(){\n' + requiredModel + '\nreturn main();\n}()';
+
+  console.log(requiredModel);
 };
 
 var findRequires = function(source) {
