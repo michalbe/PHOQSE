@@ -40,7 +40,7 @@ var customShapesDefinitions = function() {
   * Shapes
   *
   **/
-  var hole = function(base, size, translate){
+  var hole = function(base, size, translate, objectHeight){
     return difference(base, cylinder({
       r: size,
       h: objectHeight,
@@ -61,7 +61,7 @@ var customShapesDefinitions = function() {
     });
 
     var circle = intersection(part2, part1);
-    return hole(circle, radius-width, [0, 0, 0]);
+    return hole(circle, radius-width, [0, 0, 0], height);
   };
 
   var circularHoles = function(options) {
@@ -69,12 +69,13 @@ var customShapesDefinitions = function() {
     var numberOfHoles = options.numberOfHoles;
     var holeRadius = options.holeRadius;
     var distanceFromCenter = options.distanceFromCenter;
+    var objectHeight = options.objectHeight;
     var angle = 0;
     var step = (2*Math.PI) / numberOfHoles;
     for(var i = 0; i < numberOfHoles; i++) {
       var x = distanceFromCenter * Math.cos(angle);
       var y = distanceFromCenter * Math.sin(angle);
-      base = hole(base, holeRadius, [x, y, 0]);
+      base = hole(base, holeRadius, [x, y, 0], objectHeight);
       angle += step;
     }
 
