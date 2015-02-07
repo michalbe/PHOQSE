@@ -37,7 +37,8 @@ function main() {
     base: mainRing,
     numberOfHoles: 4,
     holeRadius: screwHoleSize,
-    distanceFromCenter: bigRingScrewRadius
+    distanceFromCenter: bigRingScrewRadius,
+    objectHeight: objectHeight
   });
 
   var wholePart = union(mainRing, generateLetters());

@@ -10,14 +10,33 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
   browser = RegExp.$1.toLowerCase();
 }
 
-var includeModel = function(fileUrl) {
-  $.ajax({
+var requireModel = function(fileUrl) {
+  var requiredModel = $.ajax({
     url: fileUrl,
-    cache: false
-  }).done(function(html) {
-    console.log('html', html);
-  });
+    cache: false,
+    async: false
+  }).responseText;
+
+  return 'function(){\n' + requiredModel + '\nreturn main();\n}()';
 };
+
+var findRequires = function(source) {
+  source = source.toString().split('\n');
+  var requires = source.filter(function(line){
+    return line.match(/require/);
+  });
+  return requires;
+};
+
+var insertRequiredModel = function(model, source) {
+  var loadedModel = requireModel(model.match(/require\(['"+](.*)['"+]\)/)[1]);
+  source = source.toString().split('\n');
+
+  var lineIndex = source.indexOf(model)
+  source[lineIndex] = source[lineIndex].match(/(.*)=/)[0] + loadedModel;
+
+  return source.join('\n');
+}
 
 window.onload = function() {
   $('#viewer').height($(window).height());
@@ -29,6 +48,12 @@ window.onload = function() {
 
   var exec = function(editor) {
     var src = editor.getValue();
+    var requires = findRequires(src);
+
+    if (requires) {
+      src = insertRequiredModel(requires[0], src);
+    }
+
     if (src.match(/^\/\/\!OpenSCAD/i)) {
       editor.getSession().setMode('ace/mode/scad');
       src = openscadOpenJscadParser.parse(src);

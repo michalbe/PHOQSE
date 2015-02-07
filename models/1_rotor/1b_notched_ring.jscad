@@ -1,14 +1,15 @@
 // title: PHOQSE / 1. Rotor / 1B. Notched Ring
 // author: Michal Budzynski <michal@virtualdesign.pl>
 
-var objectHeight = 0.5;
 function main() {
+  var objectHeight = 0.5;
   var mainRing = ring(bigRingSize, 2, objectHeight);
   mainRing = circularHoles({
     base: mainRing,
     numberOfHoles: 4,
     holeRadius: screwHoleSize,
-    distanceFromCenter: bigRingScrewRadius
+    distanceFromCenter: bigRingScrewRadius,
+    objectHeight: objectHeight
   });
 
   var notch = cube({
