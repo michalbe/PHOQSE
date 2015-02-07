@@ -19,6 +19,17 @@ var includeModel = function(fileUrl) {
   });
 };
 
+var findRequires = function(source) {
+  source = source.toString().split('\n');
+  var requires = source.filter(function(line){
+    return line.match(/require/);
+  });
+
+  console.log('r', requires);
+
+  return requires;
+};
+
 window.onload = function() {
   $('#viewer').height($(window).height());
 
@@ -29,6 +40,8 @@ window.onload = function() {
 
   var exec = function(editor) {
     var src = editor.getValue();
+    var requires = findRequires(src);
+
     if (src.match(/^\/\/\!OpenSCAD/i)) {
       editor.getSession().setMode('ace/mode/scad');
       src = openscadOpenJscadParser.parse(src);
