@@ -10,16 +10,14 @@ if (navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)/i)) {
   browser = RegExp.$1.toLowerCase();
 }
 
-var requireModel = function(fileUrl, cb) {
+var requireModel = function(fileUrl) {
   var requiredModel = $.ajax({
     url: fileUrl,
     cache: false,
     async: false
   }).responseText;
 
-  requiredModel = 'function(){\n' + requiredModel + '\nreturn main();\n}()';
-
-  console.log(requiredModel);
+  return 'function(){\n' + requiredModel + '\nreturn main();\n}()';
 };
 
 var findRequires = function(source) {
