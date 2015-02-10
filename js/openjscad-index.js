@@ -22,8 +22,8 @@ var requireModel = function(fileUrl) {
 
 var findRequires = function(source) {
   source = source.toString().split('\n');
-  var requires = source.filter(function(line){
-    return line.match(/require/);
+  var requires = source.filter(function(line) {
+    return line.match(/require/) && !line.match(/\/\//);
   });
   return requires;
 };
