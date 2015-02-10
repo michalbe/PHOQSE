@@ -55,18 +55,12 @@ var customShapesDefinitions = function() {
   };
 
   var ring = function(radius, width, height){
-    var part1 = cylinder({
+    var circle = cylinder({
       r: radius,
       h: height,
       center: true
     });
 
-    var part2 = cube({
-      size: [radius*2, radius*2, height],
-      center: [true, true, true]
-    });
-
-    var circle = intersection(part2, part1);
     return hole(circle, radius-width, [0, 0, 0], height);
   };
 
