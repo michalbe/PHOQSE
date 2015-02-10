@@ -40,27 +40,27 @@ var customShapesDefinitions = function() {
   * Shapes
   *
   **/
-  var hole = function(base, size, translate, objectHeight){
-    return difference(base, cylinder({
+  var hole = function(base, size, translate, objectHeight, dontDiffMe) {
+    var holeCylinder = cylinder({
       r: size,
       h: objectHeight,
       center: true
-    }).translate(translate));
+    }).translate(translate);
+
+    if (dontDiffMe) {
+      return holeCylinder;
+    } else {
+      return difference(base, holeCylinder);
+    }
   };
 
   var ring = function(radius, width, height){
-    var part1 = cylinder({
+    var circle = cylinder({
       r: radius,
       h: height,
       center: true
     });
 
-    var part2 = cube({
-      size: [radius*2, radius*2, height],
-      center: [true, true, true]
-    });
-
-    var circle = intersection(part2, part1);
     return hole(circle, radius-width, [0, 0, 0], height);
   };
 
@@ -70,15 +70,18 @@ var customShapesDefinitions = function() {
     var holeRadius = options.holeRadius;
     var distanceFromCenter = options.distanceFromCenter;
     var objectHeight = options.objectHeight;
+    var holes = [];
     var angle = 0;
     var step = (2*Math.PI) / numberOfHoles;
     for(var i = 0; i < numberOfHoles; i++) {
       var x = distanceFromCenter * Math.cos(angle);
       var y = distanceFromCenter * Math.sin(angle);
-      base = hole(base, holeRadius, [x, y, 0], objectHeight);
+      holes.push(hole(base, holeRadius, [x, y, 0], objectHeight, true));
       angle += step;
     }
 
+    holes = union.apply(null, holes);
+    base = difference(base, holes);
     return base;
   };
 };
