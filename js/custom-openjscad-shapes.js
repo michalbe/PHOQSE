@@ -76,15 +76,18 @@ var customShapesDefinitions = function() {
     var holeRadius = options.holeRadius;
     var distanceFromCenter = options.distanceFromCenter;
     var objectHeight = options.objectHeight;
+    var holes = [];
     var angle = 0;
     var step = (2*Math.PI) / numberOfHoles;
     for(var i = 0; i < numberOfHoles; i++) {
       var x = distanceFromCenter * Math.cos(angle);
       var y = distanceFromCenter * Math.sin(angle);
-      base = hole(base, holeRadius, [x, y, 0], objectHeight);
+      holes.push(hole(base, holeRadius, [x, y, 0], objectHeight, true));
       angle += step;
     }
 
+    holes = union.apply(null, holes);
+    base = difference(base, holes);
     return base;
   };
 };
