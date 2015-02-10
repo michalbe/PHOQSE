@@ -66,9 +66,11 @@ window.onload = function() {
     } else {
       editor.getSession().setMode('ace/mode/javascript');
     }
+
+    // When the model is rendered, displey the time needed to render it
     gProcessor.onchange = function() {
       var newTime = ((new Date()) - time) / 1000;
-     $('#statusspan').html('Ready in ' + newTime + 's');
+      $('#statusspan').html('Ready in ' + newTime + 's');
     }
 
     gProcessor.setJsCad(customShapes + src);
