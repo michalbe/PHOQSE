@@ -56,7 +56,6 @@ window.onload = function() {
       }
     }
 
-    console.log(src);
     if (src.match(/^\/\/\!OpenSCAD/i)) {
       editor.getSession().setMode('ace/mode/scad');
       src = openscadOpenJscadParser.parse(src);
