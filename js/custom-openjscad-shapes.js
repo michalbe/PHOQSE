@@ -54,7 +54,7 @@ var customShapesDefinitions = function() {
     }
   };
 
-  var ring = function(radius, width, height){
+  var ring = function(radius, width, height) {
     var circle = cylinder({
       r: radius,
       h: height,
