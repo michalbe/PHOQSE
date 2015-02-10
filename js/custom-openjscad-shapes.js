@@ -40,12 +40,18 @@ var customShapesDefinitions = function() {
   * Shapes
   *
   **/
-  var hole = function(base, size, translate, objectHeight){
-    return difference(base, cylinder({
+  var hole = function(base, size, translate, objectHeight, dontDiffMe) {
+    var holeCylinder = cylinder({
       r: size,
       h: objectHeight,
       center: true
-    }).translate(translate));
+    }).translate(translate);
+
+    if (dontDiffMe) {
+      return holeCylinder;
+    } else {
+      return difference(base, holeCylinder);
+    }
   };
 
   var ring = function(radius, width, height){
