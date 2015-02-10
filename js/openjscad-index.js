@@ -51,7 +51,9 @@ window.onload = function() {
     var requires = findRequires(src);
 
     if (requires) {
-      src = insertRequiredModel(requires[0], src);
+      for (var i = 0, l = requires.length; i<l; i++) {
+        src = insertRequiredModel(requires[i], src);
+      }
     }
 
     if (src.match(/^\/\/\!OpenSCAD/i)) {
