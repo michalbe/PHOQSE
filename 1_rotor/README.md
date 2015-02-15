@@ -1,6 +1,6 @@
 ## Rotors
 
-![rotors](../../imgs/rotors-model.png)
+![rotors](../imgs/rotors-model.png)
 Exploded view of an Enigma machine rotor. Labeled components are as follows:
  1. Notched ring [:one:](stl/1a_notched_ring.stl) [:two:](stl/1b_notched_ring.stl)
  2. Front face (_TODO: dot should mark the position of the "A"_) [:one:](stl/2_front_face.stl)
@@ -16,7 +16,7 @@ Exploded view of an Enigma machine rotor. Labeled components are as follows:
 
 
 ### IMAGES
- ![rotors](../../imgs/rotor-2.jpg)
- ![rotors](../../imgs/rotor-1.jpg)
- ![rotors](../../imgs/rotor-3.jpg)
- ![rotors](../../imgs/rotor-4.jpg)
+ ![rotors](../imgs/rotor-2.jpg)
+ ![rotors](../imgs/rotor-1.jpg)
+ ![rotors](../imgs/rotor-3.jpg)
+ ![rotors](../imgs/rotor-4.jpg)
